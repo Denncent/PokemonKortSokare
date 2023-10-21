@@ -1,0 +1,137 @@
+
+/*Sätter sökbaren i mitten av hemsidan*/.input-group {
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+}
+
+/* skapar mellanrum mellan toppen av sidan och H1an*/
+#titel {
+  padding-bottom: 25px;
+}
+
+/* tom yta som sätter mellanrum mellan sökbaren och content innehållet */
+#tom-yta1 {
+  padding-bottom: 75px;
+}
+
+#tom-yta2 {
+  padding-bottom: 75px;
+}
+
+/* Sätter färg ifall bilden inte laddas, annars tar den bilden som finns i mappen som bakgrundsnbild */
+
+body {
+  background-color: rgb(74, 74, 74);
+  background-image: url(images/bakgrund.png);
+  background-attachment: fixed;
+}
+
+/* Skapar titeln och fixar till text skugga till blå, sätter titeln i mitten av hemisdan och gör den till gul */
+
+h1 {
+  text-shadow: 3px 0 0 rgb(46, 54, 211), 0 -3px 0 rgb(46, 54, 211), 0 3px 0 rgb(46, 54, 211), -3px 0 0 rgb(46, 54, 211);
+  text-align: center;
+  color:rgb(255, 251, 4)
+}
+
+/* Gör den beskrivande texten till i mitten av hemsidan, gör den till vit och italic stil */
+
+p {
+  text-align: center;
+  font-style: italic;
+  color: white;
+}
+
+/* stylar om knapp sökningens färg så den matchar skuggan på h1 */
+
+#sok-knapp {
+  background-color: rgb(46, 54, 211);
+  border-color: rgb(46, 54, 211);
+}
+
+/* stylar om kortens bredd, höjd och sätter ett mellanrum mellan korten på 15px */
+.pkmn-kort {
+  width: 215px;
+  height: 300px;
+  margin: 15px;
+}
+
+/* Sätter ett mellanrum överst på laddaren, sätter den i mitten av hemsidan och gör den 2.5x större änn original storleken */
+
+#preloader {
+  padding-top: 125px;
+  text-align: center;
+  transform: scale(2.5);
+  }
+
+  /* Sätter en vit transparent bakgrund bakom korten för att enklare avskilja bakgrunden och korten, sätter lite mellanrum, gör så den hamnar i mitten av hemsidan och sätter en bestämd bredd*/
+#content {
+  background-color: rgba(255, 255, 255, 0.27);
+  border-radius: 25px;
+  width:1000px;
+  margin:0 auto;
+}
+
+/* Sätter en animation som händer i över .2 sekunder */
+
+img {
+transition: transform .2s; /* Animation */
+}
+
+/* När musen svävar över korten så blir dem 1.5x större samt gör att dem får en gul skinande effekt */
+
+img:hover{
+  transform: scale(1.5);
+  box-shadow: 0 0 4px 4px rgba(255, 251, 4, 0.742)
+}
+
+/* Footern längs ner som jag sätter längst ner till sidan för att ge mig själv credit, med gul färg som passar färgschemat*/
+
+footer p{
+  color: rgb(252, 249, 165)
+}
+
+
+/* surfplatta till mobil anpassning */
+@media screen and (max-width: 768px){
+/* Gör titlen mindre */
+  h1 {
+    font-size: 30px;
+  }
+/* Gör beskrivande texten mindre */
+  p {
+    font-size: 17px;
+  }
+
+  footern p{
+    font-size: 15px;
+  }
+/* gör bilderna mindre, och även så att den hamnar i mitten av bakgrunden */
+  img {
+    position: relative;
+    left: 13%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+/* Tar bort den skinande effekten och gör kort förstoringen mindre så den passar mobil bättre */
+    img:hover{
+      transform: scale(1.3);
+      box-shadow: none;
+    }
+
+/* Gör att korten displayas horizonellt istället för vertikalt för att bättre anpassa mindre skärmstorlerkar  */
+
+    #content {
+      display: grid;
+      width: 330px; 
+}
+
+/* Gjort hemsida laddaren mindre för att anpassa skärmstorlekar, med enbart 1.2x förstoring */
+
+  #preloader {
+  padding-top: 50px;
+  text-align: center;
+  transform: scale(2);
+   }
+}

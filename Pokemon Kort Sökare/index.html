@@ -1,0 +1,62 @@
+<!doctype html>
+<!-- Skapar en html tagg som säger att den naturliga språket på hemsidan ska vara på svenska -->
+<html lang="sv">
+
+<!--skapar en head som inkluderar, utf-8 karaktärer, viewport som inte skalas ner beroende på skärmstorlek, och diverse stylesheets inklusive min style.css, med titeln "Pokémon Kort Sökare"-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Pokémon Kort Sökare</title>
+</head>
+
+<!-- body som har en klass som skapar en container med full bredd, som kommer sträcka ut sig över hela skärmen.
+skapar en titel, och mindre text under, sedan skapas en main  med en label där det skapas en informativ text för skärmläsare, sedan skapas en div klass med "input group" som gör det möjligt att inkludera ikoner bredvid sökfält.
+sedan skapas en "input" eller sökbar där det ska inte komma upp förslag som gör klart ordet för dig, med en placeholder text i sökbaren till något är inmatat, med "input grup" som uppgraderar sökbaren med focus states och etc.
+
+Detta läggs på div klassen under som är självaste knappen som är tryckbar, med ett id, och en i class som jag hämtar ifrån font awesome. Sedan skapas en tom yta för att skapa mellanrum mellan botten av hemsidan kontra innehållet med kort. och lägger till preloaden med margin satt till * 3, med en gul spinner. -->
+
+<body>
+  <div id="titel"></div>
+    <h1>Pokémon Kort Sökare!</h1>
+    <p>Hitta dina gamla nostalgi kort eller nylanserade häftiga kort!</p>
+    <main>
+        <form id="soker-form">
+          <label for="search" class="sr-only">Pokémon Kort Sökare</label>
+          <div class="input-group">
+            <input type="search" id="search" autocomplete="off" placeholder="Skriv in kort namn..." class="form-control">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary" id="sok-knapp"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </form>
+        <div id="tom-yta1"></div>
+        <div id="preloader" class="mt-5">
+        <div class="spinner-border text-warning"></div>
+    </div>
+<!-- Sedan kommer själva diven "content" som är tom från att börja med men kommer att sättas in med pokemon kort, den är gömd från att börja med då inga pokemon kort finns från att börja med.
+sedan stängs div och main taggar -->
+
+        <div id="content" class="d-none">
+
+        </div>	
+      </main>
+
+      <!-- Sedan länkas några färdiga javascript biblotek för att underlätta javascript delen av händelsehanteringen och tillkallar min egna main.js fil.
+      Body stängs och en tom yta div är här för att skapa mellanrum mellan footern och body. Inuti footern har jag satt lite styling kod för att säkerställa att den hamnar i botten av hemsidan där den ska vara. Och min <p> text i footern för att säkerställa för användarna att det är jag som har gjort sidan.
+      Till slut stängs footer taggen och html taggen -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+
+<div id="tom-yta2"></div>
+<footer id="footern" style="position: absolute; bottom:0; width:100%;">
+	<p>Skapad av Dennis Centerhag<b> © 2023</b></p>
+</footer>
+</body>
+</html>
